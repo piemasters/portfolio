@@ -4,7 +4,7 @@ import { useState } from "react";
 import { PostMetadata } from "@/lib/posts";
 
 import Posts from "@/components/posts";
-// import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Cross2Icon } from "@radix-ui/react-icons";
 
@@ -22,13 +22,13 @@ export default function PostsWithSearch({ posts }: { posts: PostMetadata[] }) {
   return (
     <div>
       <div className="mb-12 flex items-center gap-3">
-        {/* <Input
+        <Input
           type="text"
           placeholder="Search posts..."
           className="h-9 w-full sm:w-1/2"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-        /> */}
+        />
         {isFiltered && (
           <Button
             size="sm"
