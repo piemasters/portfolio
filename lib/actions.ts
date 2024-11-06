@@ -66,6 +66,6 @@ export async function subscribe(data: NewsletterFormInputs) {
     if (error instanceof Error) {
       return { error: { message: error?.message, cause: error?.cause } };
     }
-    return String(error);
+    return { error: String(error) };
   }
 }
