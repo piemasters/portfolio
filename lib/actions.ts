@@ -29,6 +29,9 @@ export async function sendEmail(data: ContactFormInputs) {
       subject: "Contact form submission",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       react: ContactFormEmail({ name, email, message }),
+      headers: {
+        "List-Unsubscribe": "<https://example.com/unsubscribe>",
+      },
     });
 
     if (!data || error) {
