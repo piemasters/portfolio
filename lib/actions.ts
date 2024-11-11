@@ -57,6 +57,7 @@ export async function subscribe(data: NewsletterFormInputs) {
     const { data, error } = await resend.contacts.create({
       email: email,
       audienceId: process.env.RESEND_AUDIENCE_ID as string,
+      unsubscribed: false,
     });
 
     if (!data || error) {
