@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 export default function SignIn() {
   return (
-    <div className="flex justify-center gap-2">
+    <div className="flex justify-center gap-4 py-12">
       <SignedOut>
         <Button asChild>
           <SignInButton />
