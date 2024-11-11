@@ -74,7 +74,7 @@ export async function subscribe(data: NewsletterFormInputs) {
       text: `Message`,
       react: WelcomeEmail({}),
       headers: {
-        "List-Unsubscribe": `<https://${process.env.VERCEL_URL}/unsubscribe>`,
+        "List-Unsubscribe": `<https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/unsubscribe>`,
       },
     });
 

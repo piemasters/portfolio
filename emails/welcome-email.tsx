@@ -41,7 +41,7 @@ const WelcomeEmail: React.FC = () => (
           <Heading className="mb-6 text-center leading-8">David Norton</Heading>
 
           <Img
-            src={`https://${process.env.VERCEL_URL}/images/authors/ted.jpg`}
+            src={`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/images/authors/ted.jpg`}
             width="403"
             height="226"
             alt="Ted"
@@ -76,7 +76,9 @@ const WelcomeEmail: React.FC = () => (
           <Section>
             <Row>
               <Column className="text-center text-sm">
-                <Link href={`https://${process.env.VERCEL_URL}/unsubscribe`}>
+                <Link
+                  href={`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/unsubscribe`}
+                >
                   Unsubscribe
                 </Link>
               </Column>
