@@ -15,3 +15,7 @@ export const ContactFormSchema = z.object({
 export const NewsletterFormSchema = z.object({
   email: z.string().email("Invalid email."),
 });
+
+export const UnsubscribeFormSchema = z.object({
+  email: z.string().email("Invalid email."),
+});
