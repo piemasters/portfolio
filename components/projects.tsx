@@ -15,11 +15,13 @@ export default function Projects({
         <li key={project.slug} className="group relative">
           <Link href={`/projects/${project.slug}`}>
             {project.image && (
-              <div className="h-72 w-full overflow-hidden bg-muted sm:h-60">
+              <div className="relative h-72 w-full overflow-hidden bg-muted sm:h-60">
                 <Image
                   src={project.image}
                   alt={project.title || ""}
                   fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
