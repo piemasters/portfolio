@@ -1,28 +1,22 @@
-Welcome to your new TanStack Start app!
+# David Norton
 
-# Getting Started
+Portfolio site for David Norton, a senior software engineer in London. Page copy, projects, and skills live in `src/content/site.ts`.
 
-To run this application:
+`public/llms.txt` is generated from that content when the dev server starts and when the site is built.
+
+## Develop
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-# Building For Production
+The dev server runs at http://localhost:3000.
 
-To build this application for production:
+## Checks
 
 ```bash
+pnpm test
+pnpm test:e2e
 pnpm build
 ```
-
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-## Routing
-
-This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as files in `src/routes`.
-
-Notes for adding routes, links, layouts, server functions, and loaders are in `.cursor/rules/tanstack-start.mdc`.

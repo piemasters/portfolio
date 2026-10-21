@@ -33,6 +33,13 @@ test("home shows the portfolio sections", async ({ page }) => {
     }
   }
   await expect(intro.getByRole("link", { name: "GitHub" })).toHaveAttribute("rel", "noreferrer");
+
+  const contact = page.getByRole("navigation", { name: "Contact" });
+  for (const social of site.socials) {
+    const link = contact.getByRole("link", { name: social.label });
+    await expect(link).toHaveAttribute("href", social.href);
+    await expect(link).toHaveAttribute("rel", "noreferrer");
+  }
 });
 
 test("section links move to work, about, and skills", async ({ page }) => {

@@ -4,7 +4,7 @@
 
 ## Pages
 
-- [Home](https://davidnorton.app/): Senior software engineer in London
+- [Home](https://davidnorton.app/): Senior Software Engineer in London
 - [Landinsight](https://davidnorton.app/work/landinsight): Consolidates ownership, planning, and property data into one platform, letting developers assess opportunities, reduce risk, and act with confidence.
 - [Forestry TEP](https://davidnorton.app/work/ftep): Serves commercial, governmental and research users in the forestry sector. It enables easy access to satellite data from any global location.
 - [MiniToTheMax](https://davidnorton.app/work/minitothemax): A miniature painting and tabletop hobby platform.
@@ -21,10 +21,15 @@
 
 - TypeScript
 - React
-- Vue
+- Deck.GL
 - Tailwind CSS
 - Cypress
 - Storybook
+- Vue
+- Gatsby
+- Angular
+- CREODIAS
+- OpenLayers
 
 ### Concepts
 
@@ -34,6 +39,7 @@
 - Performance
 - Security
 - Testing
+- Product Analytics
 
 ## Contact
 

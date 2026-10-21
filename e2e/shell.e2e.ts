@@ -7,6 +7,22 @@ function bulbGlow(toggle: Locator) {
     .evaluate((element) => getComputedStyle(element).opacity);
 }
 
+test("llms.txt lists the full site catalog", async ({ request }) => {
+  const response = await request.get("/llms.txt");
+
+  expect(response.status()).toBe(200);
+  expect(response.headers()["content-type"] ?? "").toContain("text/plain");
+  const text = await response.text();
+  for (const group of site.skills) {
+    for (const item of group.items) {
+      expect(text).toContain(`- ${item}`);
+    }
+  }
+  for (const social of site.socials) {
+    expect(text).toContain(`[${social.label}](${social.href})`);
+  }
+});
+
 test("a missing agent catalog answers not found", async ({ request }) => {
   for (const path of ["/.well-known/ai-catalog.json", "/.well-known/ard.json"]) {
     const response = await request.get(path);
