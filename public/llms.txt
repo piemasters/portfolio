@@ -1,0 +1,41 @@
+# David Norton
+
+> Portfolio of David Norton, a senior software engineer focused on frontend development who designs and builds interfaces for complex web applications.
+
+## Pages
+
+- [Home](https://davidnorton.app/): Senior software engineer in London
+- [Landinsight](https://davidnorton.app/work/landinsight): Consolidates ownership, planning, and property data into one platform, letting developers assess opportunities, reduce risk, and act with confidence.
+- [Forestry TEP](https://davidnorton.app/work/ftep): Serves commercial, governmental and research users in the forestry sector. It enables easy access to satellite data from any global location.
+- [MiniToTheMax](https://davidnorton.app/work/minitothemax): A miniature painting and tabletop hobby platform.
+
+## About
+
+- Based: London
+- Focus: UI/UX
+- Sectors: Property, Space, Security, Justice
+
+## Key skills
+
+### Technologies
+
+- TypeScript
+- React
+- Vue
+- Tailwind CSS
+- Cypress
+- Storybook
+
+### Concepts
+
+- User Experience
+- Design Systems
+- Accessibility
+- Performance
+- Security
+- Testing
+
+## Contact
+
+- [GitHub](https://github.com/piemasters)
+- [LinkedIn](https://www.linkedin.com/in/davidnorton29)
