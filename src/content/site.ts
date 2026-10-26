@@ -55,10 +55,10 @@ export const site = {
     { label: "GitHub", href: "https://github.com/piemasters" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/davidnorton29" },
   ],
-  projects: [
+  work: [
     {
       slug: "landinsight",
-      title: "Landinsight",
+      title: "LandInsight",
       year: "2019 - 2026",
       summary:
         "Consolidates ownership, planning, and property data into one platform, letting developers assess opportunities, reduce risk, and act with confidence.",
@@ -81,6 +81,19 @@ export const site = {
       body: ["TBD"],
     },
     {
+      slug: "passport-application-forms",
+      title: "Passport Application Forms",
+      year: "2015",
+      summary: "Smart passport application forms for the Crown Dependencies & Gibraltar.",
+      tags: ["Accessibility", "Design Systems", "User Experience"],
+      thumbnail: "/images/passport-application-forms.jpg",
+      banner: "/images/banners/passport-application-forms.jpg",
+      links: [],
+      body: ["TBD"],
+    },
+  ],
+  projects: [
+    {
       slug: "minitothemax",
       title: "MiniToTheMax",
       year: "2012 - Present",
@@ -94,12 +107,23 @@ export const site = {
   ],
 } as const;
 
-export type Project = (typeof site.projects)[number] & {
+type PortfolioEntry = (typeof site.work)[number] | (typeof site.projects)[number];
+
+export type Project = PortfolioEntry & {
   image?: string;
 };
 
+export function getWork(slug: string): Project | undefined {
+  return site.work.find((project) => project.slug === slug);
+}
+
 export function getProject(slug: string): Project | undefined {
   return site.projects.find((project) => project.slug === slug);
+}
+
+export function projectPath(slug: string) {
+  if (site.work.some((project) => project.slug === slug)) return `/work/${slug}`;
+  return `/projects/${slug}`;
 }
 
 export type SkillTone = (typeof site.skills)[number]["tone"];

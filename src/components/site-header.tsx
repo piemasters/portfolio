@@ -4,6 +4,7 @@ import { site } from "#/content/site";
 
 const links = [
   { hash: "work", label: "Work" },
+  { hash: "projects", label: "Projects" },
   { hash: "about", label: "About" },
   { hash: "skills", label: "Skills" },
 ] as const;
@@ -15,8 +16,8 @@ export function SiteHeader() {
         <Link to="/" className="font-serif text-lg tracking-tight text-ink">
           {site.name}
         </Link>
-        <div className="flex items-center gap-5">
-          <nav aria-label="Sections" className="flex items-center gap-5 text-sm">
+        <div className="flex items-center gap-3 sm:gap-5">
+          <nav aria-label="Sections" className="flex items-center gap-3 text-sm sm:gap-5">
             {links.map((link) => (
               <Link
                 key={link.hash}

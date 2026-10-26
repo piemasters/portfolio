@@ -1,12 +1,18 @@
 import { expect, test } from "vite-plus/test";
-import { getProject, site, skillTone } from "./site";
+import { getProject, getWork, site, skillTone } from "./site";
 
-test("returns a known project by slug", () => {
+test("returns a known piece of work by slug", () => {
+  const project = getWork(site.work[0].slug);
+  expect(project?.title).toBe(site.work[0].title);
+});
+
+test("returns a known personal project by slug", () => {
   const project = getProject(site.projects[0].slug);
   expect(project?.title).toBe(site.projects[0].title);
 });
 
 test("returns undefined for an unknown slug", () => {
+  expect(getWork("not-a-project")).toBeUndefined();
   expect(getProject("not-a-project")).toBeUndefined();
 });
 

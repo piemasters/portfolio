@@ -5,9 +5,10 @@
 ## Pages
 
 - [Home](https://davidnorton.app/): Senior Software Engineer in London
-- [Landinsight](https://davidnorton.app/work/landinsight): Consolidates ownership, planning, and property data into one platform, letting developers assess opportunities, reduce risk, and act with confidence.
+- [LandInsight](https://davidnorton.app/work/landinsight): Consolidates ownership, planning, and property data into one platform, letting developers assess opportunities, reduce risk, and act with confidence.
 - [Forestry TEP](https://davidnorton.app/work/ftep): Serves commercial, governmental and research users in the forestry sector. It enables easy access to satellite data from any global location.
-- [MiniToTheMax](https://davidnorton.app/work/minitothemax): A miniature painting and tabletop hobby platform.
+- [Passport Application Forms](https://davidnorton.app/work/passport-application-forms): Smart passport application forms for the Crown Dependencies & Gibraltar.
+- [MiniToTheMax](https://davidnorton.app/projects/minitothemax): A miniature painting and tabletop hobby platform.
 
 ## About
 

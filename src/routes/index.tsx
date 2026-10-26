@@ -54,9 +54,19 @@ function Home() {
       <section id="work" className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
         <div className="mb-8 flex items-baseline justify-between gap-4">
           <h2 className="font-serif text-3xl tracking-tight">Selected work</h2>
-          <p className="text-sm text-muted">{site.projects.length} projects</p>
+          <p className="text-sm text-muted">{countLabel(site.work.length)}</p>
         </div>
-        <ProjectList />
+        <ProjectList projects={site.work} to="/work/$slug" />
+      </section>
+
+      <section id="projects" className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mb-8 flex items-baseline justify-between gap-4">
+            <h2 className="font-serif text-3xl tracking-tight">Projects</h2>
+            <p className="text-sm text-muted">{countLabel(site.projects.length)}</p>
+          </div>
+          <ProjectList projects={site.projects} to="/projects/$slug" />
+        </div>
       </section>
 
       <section id="about" className="border-t border-line">
@@ -112,6 +122,10 @@ function Home() {
       </section>
     </main>
   );
+}
+
+function countLabel(count: number) {
+  return `${count} ${count === 1 ? "project" : "projects"}`;
 }
 
 function SocialLinks({ className }: { className?: string }) {

@@ -1,14 +1,20 @@
 import { Link } from "@tanstack/react-router";
 import { Tag } from "#/components/tag";
-import { site } from "#/content/site";
+import type { Project } from "#/content/site";
 
-export function ProjectList() {
+export function ProjectList({
+  projects,
+  to,
+}: {
+  projects: readonly Project[];
+  to: "/work/$slug" | "/projects/$slug";
+}) {
   return (
     <ol className="border-b border-line">
-      {site.projects.map((project) => (
+      {projects.map((project) => (
         <li key={project.slug}>
           <Link
-            to="/work/$slug"
+            to={to}
             params={{ slug: project.slug }}
             className="group grid grid-cols-[5rem_1fr] gap-x-5 gap-y-2 border-t border-line py-7 sm:grid-cols-[6rem_1fr_auto] sm:items-start sm:gap-x-8 sm:py-9"
           >

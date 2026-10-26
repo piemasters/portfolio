@@ -12,9 +12,19 @@ test("home shows the portfolio sections", async ({ page }) => {
   await expect(intro.getByRole("link", { name: "GitHub" })).toBeVisible();
   await expect(intro.getByRole("link", { name: "LinkedIn" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Selected work" })).toBeVisible();
+  await expect(page.locator("#work")).toContainText(countText(site.work.length));
+
+  for (const project of site.work) {
+    const link = page.locator("#work").getByRole("link", { name: project.title });
+    await expect(link).toBeVisible();
+    await expect(link.locator("img")).toHaveAttribute("src", project.thumbnail);
+  }
+
+  await expect(page.getByRole("heading", { name: "Projects", exact: true })).toBeVisible();
+  await expect(page.locator("#projects")).toContainText(countText(site.projects.length));
 
   for (const project of site.projects) {
-    const link = page.getByRole("link", { name: project.title });
+    const link = page.locator("#projects").getByRole("link", { name: project.title });
     await expect(link).toBeVisible();
     await expect(link.locator("img")).toHaveAttribute("src", project.thumbnail);
   }
@@ -42,13 +52,21 @@ test("home shows the portfolio sections", async ({ page }) => {
   }
 });
 
-test("section links move to work, about, and skills", async ({ page }) => {
+function countText(count: number) {
+  return `${count} ${count === 1 ? "project" : "projects"}`;
+}
+
+test("section links move to work, projects, about, and skills", async ({ page }) => {
   await page.goto("/");
   const nav = page.getByRole("navigation", { name: "Sections" });
 
   await nav.getByRole("link", { name: "Work" }).click();
   await expect(page).toHaveURL(/#work$/);
   await expect(page.locator("#work")).toBeInViewport();
+
+  await nav.getByRole("link", { name: "Projects" }).click();
+  await expect(page).toHaveURL(/#projects$/);
+  await expect(page.locator("#projects")).toBeInViewport();
 
   await nav.getByRole("link", { name: "About" }).click();
   await expect(page).toHaveURL(/#about$/);

@@ -37,7 +37,13 @@ const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
     llmsTxt(),
-    lazyPlugins(() => [devtools(), tailwindcss(), tanstackStart(), viteReact(), netlify()]),
+    lazyPlugins(() => [
+      devtools(),
+      tailwindcss(),
+      tanstackStart(),
+      viteReact(),
+      netlify({ dev: { edgeFunctions: { enabled: false } } }),
+    ]),
   ],
 });
 

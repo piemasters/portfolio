@@ -10,9 +10,14 @@ test("llms.txt lists every page, skill, and contact link", () => {
   expect(text).toContain(`> ${site.description}`);
   expect(text).toContain(`- [Home](${site.url}/): ${site.role} in ${site.location}`);
 
-  for (const project of site.projects) {
+  for (const project of site.work) {
     expect(text).toContain(
       `- [${project.title}](${site.url}/work/${project.slug}): ${project.summary}`,
+    );
+  }
+  for (const project of site.projects) {
+    expect(text).toContain(
+      `- [${project.title}](${site.url}/projects/${project.slug}): ${project.summary}`,
     );
   }
   for (const detail of site.details) {

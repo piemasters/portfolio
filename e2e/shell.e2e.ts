@@ -75,7 +75,7 @@ test("color theme follows the system and remembers a choice", async ({ page }) =
 });
 
 test("the layout stays usable on a phone", async ({ page }) => {
-  const project = site.projects[0];
+  const project = site.work[0];
 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");

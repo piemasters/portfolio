@@ -5,7 +5,7 @@ import { NotFoundPage } from "#/components/not-found-page";
 import { SiteFooter } from "#/components/site-footer";
 import { SiteHeader } from "#/components/site-header";
 import { shareMeta, socialImage } from "#/content/meta";
-import { site, type Project } from "#/content/site";
+import { projectPath, site, type Project } from "#/content/site";
 import { themeBootScript } from "#/content/theme";
 
 import appCss from "../styles.css?url";
@@ -28,7 +28,7 @@ export const Route = createRootRoute({
         ? "That page is not in this portfolio."
         : site.description;
     const path = project
-      ? `/work/${project.slug}`
+      ? projectPath(project.slug)
       : missing
         ? (matches.at(-1)?.pathname ?? "/")
         : "/";

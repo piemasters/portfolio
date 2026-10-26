@@ -4,8 +4,11 @@ import { site } from "#/content/site";
 export function renderLlmsTxt() {
   const pages = [
     `- [Home](${site.url}/): ${site.role} in ${site.location}`,
-    ...site.projects.map(
+    ...site.work.map(
       (project) => `- [${project.title}](${site.url}/work/${project.slug}): ${project.summary}`,
+    ),
+    ...site.projects.map(
+      (project) => `- [${project.title}](${site.url}/projects/${project.slug}): ${project.summary}`,
     ),
   ];
   const details = site.details.map((detail) => `- ${detail.label}: ${detail.value}`);
