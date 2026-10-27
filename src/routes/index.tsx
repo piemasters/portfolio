@@ -51,12 +51,14 @@ function Home() {
         </div>
       </section>
 
-      <section id="work" className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
-        <div className="mb-8 flex items-baseline justify-between gap-4">
-          <h2 className="font-serif text-3xl tracking-tight">Selected work</h2>
-          <p className="text-sm text-muted">{countLabel(site.work.length)}</p>
+      <section id="work" className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mb-8 flex items-baseline justify-between gap-4">
+            <h2 className="font-serif text-3xl tracking-tight">Selected work</h2>
+            <p className="text-sm text-muted">{countLabel(site.work.length)}</p>
+          </div>
+          <ProjectList projects={site.work} to="/work/$slug" />
         </div>
-        <ProjectList projects={site.work} to="/work/$slug" />
       </section>
 
       <section id="projects" className="border-t border-line">
@@ -117,6 +119,32 @@ function Home() {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="training" className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <div className="flex flex-col">
+              <h2 className="font-serif text-3xl tracking-tight">Training</h2>
+              <p className="mt-4 text-lg leading-relaxed text-muted">{site.training.summary}</p>
+            </div>
+            <ExternalLink
+              href={site.training.href}
+              className="text-sm text-muted underline decoration-line underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
+            >
+              View on {site.training.label}
+            </ExternalLink>
+          </div>
+          <div className="overflow-hidden border border-line bg-paper">
+            <iframe
+              src={site.training.href}
+              title={`${site.name} training progress on ${site.training.label}`}
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              className="h-[min(42rem,80vh)] w-full"
+            />
           </div>
         </div>
       </section>

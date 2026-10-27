@@ -10,13 +10,13 @@ export function ProjectList({
   to: "/work/$slug" | "/projects/$slug";
 }) {
   return (
-    <ol className="border-b border-line">
+    <ol className="divide-y divide-line">
       {projects.map((project) => (
         <li key={project.slug}>
           <Link
             to={to}
             params={{ slug: project.slug }}
-            className="group grid grid-cols-[5rem_1fr] gap-x-5 gap-y-2 border-t border-line py-7 sm:grid-cols-[6rem_1fr_auto] sm:items-start sm:gap-x-8 sm:py-9"
+            className="group grid grid-cols-[5rem_1fr] gap-x-5 gap-y-2 py-7 sm:grid-cols-[6rem_1fr_auto] sm:items-start sm:gap-x-8 sm:py-9"
           >
             <img
               src={project.thumbnail}

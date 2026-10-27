@@ -29,6 +29,9 @@ test("llms.txt lists every page, skill, and contact link", () => {
       expect(text).toContain(`- ${item}`);
     }
   }
+  expect(text).toContain(
+    `- [${site.training.label}](${site.training.href}): ${site.training.summary}`,
+  );
   for (const social of site.socials) {
     expect(text).toContain(`- [${social.label}](${social.href})`);
   }

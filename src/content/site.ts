@@ -55,6 +55,11 @@ export const site = {
     { label: "GitHub", href: "https://github.com/piemasters" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/davidnorton29" },
   ],
+  training: {
+    label: "Master.dev",
+    href: "https://master.dev/u/piemasters/",
+    summary: "Record of courses watched, hours invested, and learning-path progress on Master.dev.",
+  },
   work: [
     {
       slug: "landinsight",

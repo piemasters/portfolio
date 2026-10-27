@@ -35,6 +35,15 @@ test("home shows the portfolio sections", async ({ page }) => {
     await expect(page.locator("#about").getByText(detail.label, { exact: true })).toBeVisible();
     await expect(page.locator("#about").getByText(detail.value, { exact: true })).toBeVisible();
   }
+  await expect(page.getByRole("heading", { name: "Training" })).toBeVisible();
+  const training = page.locator("#training");
+  await expect(training.getByText(site.training.summary)).toBeVisible();
+  await expect(
+    training.getByRole("link", { name: `View on ${site.training.label}` }),
+  ).toHaveAttribute("href", site.training.href);
+  await expect(
+    training.getByTitle(`${site.name} training progress on ${site.training.label}`),
+  ).toHaveAttribute("src", site.training.href);
   await expect(page.getByRole("heading", { name: "Key skills" })).toBeVisible();
   for (const group of site.skills) {
     await expect(page.locator("#skills").getByRole("heading", { name: group.label })).toBeVisible();
@@ -56,7 +65,7 @@ function countText(count: number) {
   return `${count} ${count === 1 ? "project" : "projects"}`;
 }
 
-test("section links move to work, projects, about, and skills", async ({ page }) => {
+test("section links move to work, projects, about, skills, and training", async ({ page }) => {
   await page.goto("/");
   const nav = page.getByRole("navigation", { name: "Sections" });
 
@@ -75,4 +84,8 @@ test("section links move to work, projects, about, and skills", async ({ page })
   await nav.getByRole("link", { name: "Skills" }).click();
   await expect(page).toHaveURL(/#skills$/);
   await expect(page.locator("#skills")).toBeInViewport();
+
+  await nav.getByRole("link", { name: "Training" }).click();
+  await expect(page).toHaveURL(/#training$/);
+  await expect(page.locator("#training")).toBeInViewport();
 });
