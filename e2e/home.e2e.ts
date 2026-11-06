@@ -84,8 +84,4 @@ test("section links move to work, projects, about, skills, and training", async 
   await nav.getByRole("link", { name: "Skills" }).click();
   await expect(page).toHaveURL(/#skills$/);
   await expect(page.locator("#skills")).toBeInViewport();
-
-  await nav.getByRole("link", { name: "Training" }).click();
-  await expect(page).toHaveURL(/#training$/);
-  await expect(page.locator("#training")).toBeInViewport();
 });

@@ -12,6 +12,7 @@
     "preview": "vp preview",
     "test": "vp test",
     "test:e2e": "playwright test",
+    "test:e2e:dev": "playwright test --ui",
     "prepare": "vp config"
   },
   "dependencies": {

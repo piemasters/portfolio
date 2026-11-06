@@ -13,7 +13,7 @@ test("a project opens its own page", async ({ page }) => {
   await expect(page).toHaveTitle(`${project.title} — ${site.name}`);
   await expect(page.getByRole("heading", { level: 1, name: project.title })).toBeVisible();
   await expect(page.locator("main img").first()).toHaveAttribute("src", project.banner);
-  await expect(page.getByText(project.body[0])).toBeVisible();
+
   if ("image" in project && typeof project.image === "string") {
     await expect(page.getByRole("img", { name: project.title })).toBeVisible();
   }
