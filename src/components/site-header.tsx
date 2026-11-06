@@ -3,11 +3,10 @@ import { ThemeToggle } from "#/components/theme-toggle";
 import { site } from "#/content/site";
 
 const links = [
+  { hash: "about", label: "About" },
   { hash: "work", label: "Work" },
   { hash: "projects", label: "Projects" },
-  { hash: "about", label: "About" },
   { hash: "skills", label: "Skills" },
-  { hash: "training", label: "Training" },
 ] as const;
 
 export function SiteHeader() {

@@ -51,26 +51,6 @@ function Home() {
         </div>
       </section>
 
-      <section id="work" className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-          <div className="mb-8 flex items-baseline justify-between gap-4">
-            <h2 className="font-serif text-3xl tracking-tight">Selected work</h2>
-            <p className="text-sm text-muted">{countLabel(site.work.length)}</p>
-          </div>
-          <ProjectList projects={site.work} to="/work/$slug" />
-        </div>
-      </section>
-
-      <section id="projects" className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-          <div className="mb-8 flex items-baseline justify-between gap-4">
-            <h2 className="font-serif text-3xl tracking-tight">Projects</h2>
-            <p className="text-sm text-muted">{countLabel(site.projects.length)}</p>
-          </div>
-          <ProjectList projects={site.projects} to="/projects/$slug" />
-        </div>
-      </section>
-
       <section id="about" className="border-t border-line">
         <div className="mx-auto grid max-w-6xl items-start gap-12 px-5 py-20 sm:px-8 sm:py-28 md:grid-cols-[minmax(0,40rem)_14rem] md:justify-between md:gap-16">
           <div>
@@ -89,6 +69,26 @@ function Home() {
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      <section id="work" className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mb-8 flex items-baseline justify-between gap-4">
+            <h2 className="font-serif text-3xl tracking-tight">Selected work</h2>
+            <p className="text-sm text-muted">{countLabel(site.work.length)}</p>
+          </div>
+          <ProjectList projects={site.work} to="/work/$slug" />
+        </div>
+      </section>
+
+      <section id="projects" className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mb-8 flex items-baseline justify-between gap-4">
+            <h2 className="font-serif text-3xl tracking-tight">Projects</h2>
+            <p className="text-sm text-muted">{countLabel(site.projects.length)}</p>
+          </div>
+          <ProjectList projects={site.projects} to="/projects/$slug" />
         </div>
       </section>
 

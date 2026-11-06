@@ -44,10 +44,30 @@ export function CaseStudy({
           </li>
         ))}
       </ul>
-      <div className="mt-12 max-w-2xl space-y-5 text-lg leading-relaxed">
-        {project.body.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+      <div className="mt-12 max-w-2xl space-y-5 text-lg leading-relaxed text-muted">
+        {project.body.map((block, index) => {
+          switch (block.type) {
+            case "header":
+              return (
+                <h3 key={index} className="pt-4 text-2xl font-bold text-ink tracking-tight">
+                  {block.text}
+                </h3>
+              );
+            case "bullet":
+              return (
+                <ul key={index} className="list-disc pl-6 space-y-1">
+                  <li className="text-base text-concept">{block.text}</li>
+                </ul>
+              );
+            case "paragraph":
+            default:
+              return (
+                <p key={index} className="text-base">
+                  {block.text}
+                </p>
+              );
+          }
+        })}
       </div>
       {project.links.length > 0 ? (
         <ul className="mt-10 flex flex-wrap gap-4">
